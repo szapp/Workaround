@@ -1,5 +1,5 @@
-Workaround
-==========
+Workaround Patch
+================
 
 Forked from https://github.com/szapp/NinjaPatchTemplate
 
