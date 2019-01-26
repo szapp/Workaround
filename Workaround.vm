@@ -1,0 +1,24 @@
+[BEGINVDF]
+Comment=Workaround patch for Gothic and Gothic 2 NotR%%NThis patch provides various workarounds for story bugs in mods. See readme.
+VDFName=.\Workaround.vdf
+
+[FILES]
+README_Workaround.txt
+
+; Resources (list the specific files from _work here)
+; _work\* -r
+
+; Script files
+Ninja\Ikarus\* -r
+Ninja\LeGo\* -r
+Ninja\Workaround\* -r
+
+[EXCLUDE]
+_work\Data\Scripts\* -r
+*.vm
+*.vdf
+*.bat
+
+[INCLUDE]
+
+[ENDVDF]
