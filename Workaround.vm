@@ -9,8 +9,6 @@ README_Workaround.txt
 ; _work\* -r
 
 ; Script files
-Ninja\Ikarus\* -r
-Ninja\LeGo\* -r
 Ninja\Workaround\* -r
 
 [EXCLUDE]

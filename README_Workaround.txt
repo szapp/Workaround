@@ -1,9 +1,6 @@
 Workaround Patch
 ================
 
-Forked from https://github.com/szapp/NinjaPatchTemplate
-
-
 Workaround patch for Gothic and Gothic 2 NotR
 
 This patch provides various workarounds to story bugs in mods. It is especially useful to introduce workarounds to
@@ -20,7 +17,7 @@ CALL [FUNCTION]                                     -- Call any Daedalus or exte
                                                        https://forum.worldofplayers.de/forum/threads/?p=25621202
 
 
-Patch includes Ikarus and LeGo (and various scripts written by mud-freak).
+Patch includes various scripts written by mud-freak.
 
 
 Ninja <http://tiny.cc/GothicNinja>
