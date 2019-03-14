@@ -10,6 +10,18 @@
  */
 func void CC_CallInit() {
     CC_Register(CC_Call, "call ", "Call any daedalus or external function");
+
+    // Register auto-complete for all functions
+    const int once = 0;
+    if (!once) {
+        repeat(i, MEM_Parser.symtab_table_numInArray); var int i;
+            var zCPar_Symbol symb; symb = _^(MEM_ReadIntArray(MEM_Parser.symtab_table_array, i));
+            if ((symb.bitfield & zCPar_Symbol_bitfield_type) == zPAR_TYPE_FUNC) {
+                CC_AutoComplete(ConcatStrings("CALL ", symb.name), "");
+            };
+        end;
+        once = 1;
+    };
 };
 
 
