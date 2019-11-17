@@ -1,5 +1,6 @@
 [BEGINVDF]
 Comment=Workaround patch for Gothic and Gothic 2 NotR%%NThis patch provides various workarounds for story bugs in mods. See readme.
+BaseDir=.\
 VDFName=.\Workaround.vdf
 
 [FILES]
