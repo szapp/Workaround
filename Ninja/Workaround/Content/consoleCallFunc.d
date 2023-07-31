@@ -2,21 +2,24 @@
  * Call any function (including externals) from console
  * https://forum.worldofplayers.de/forum/threads/?p=25621202
  * Written by mud-freak, 2017
+ *
+ * If using elsewhere, please be sure to remove the prefix "Patch_" from all symbols! Please mention the source listed
+ * above.
  */
 
 
 /*
  * Initialization function
  */
-func void CC_CallInit() {
-    CC_Register(CC_Call, "call ", "Call any daedalus or external function");
+func void Patch_CC_CallInit() {
+    CC_Register(Patch_CC_Call, "call ", "Call any daedalus or external function");
 };
 
 
 /*
  * Push symbol of almost any type onto the stack
  */
-func int CC_Call_PushSymbol(var int symbID) {
+func int Patch_CC_Call_PushSymbol(var int symbID) {
     var zCPar_Symbol symb; symb = _^(MEM_GetSymbolByIndex(symbID));
 
     if ((symb.bitfield & zCPar_Symbol_bitfield_type) == zPAR_TYPE_INSTANCE) {
@@ -54,7 +57,7 @@ func int CC_Call_PushSymbol(var int symbID) {
 /*
  * Console command function to call any deadalus or external function from the console in-game
  */
-func string CC_Call(var string query) {
+func string Patch_CC_Call(var string query) {
     if (Hlp_StrCmp(query, "")) || (Hlp_StrCmp(query, " ")) {
         return "";
     };
@@ -243,7 +246,7 @@ func string CC_Call(var string query) {
                     };
 
                     // Push symbol
-                    if (!CC_Call_PushSymbol(argIntI)) {
+                    if (!Patch_CC_Call_PushSymbol(argIntI)) {
                         return ConcatStrings(ConcatStrings(errStr1, "Don't know how to push type "), pTypeS);
                     };
                     continue;
@@ -285,7 +288,7 @@ func string CC_Call(var string query) {
                 };
 
                 // Push symbol
-                if (!CC_Call_PushSymbol(aSymbID)) {
+                if (!Patch_CC_Call_PushSymbol(aSymbID)) {
                     return ConcatStrings(ConcatStrings(errStr1, "Don't know how to push type "), pTypeS);
                 };
 
@@ -347,7 +350,7 @@ func int getFI(var float f) {  // From floats.d
 };
 
 
-func int verifySymbol(var string name, var int type) {
+func int Patch_verifySymbol(var string name, var int type) {
     var int symPtr; symPtr = MEM_GetParserSymbol(name);
     if (symPtr) {
         var zCPar_Symbol sym; sym = _^(symPtr);
@@ -360,7 +363,7 @@ func int verifySymbol(var string name, var int type) {
 };
 
 func string setS(var string name, var string val) {
-    var int symPtr; symPtr = verifySymbol(name, zPAR_TYPE_STRING);
+    var int symPtr; symPtr = Patch_verifySymbol(name, zPAR_TYPE_STRING);
     if (symPtr) {
         var zCPar_Symbol sym; sym = _^(symPtr);
         MEM_WriteString(sym.content, val);
@@ -369,7 +372,7 @@ func string setS(var string name, var string val) {
     return "Invalid symbol";
 };
 func string setI(var string name, var int val) {
-    var int symPtr; symPtr = verifySymbol(name, zPAR_TYPE_INT);
+    var int symPtr; symPtr = Patch_verifySymbol(name, zPAR_TYPE_INT);
     if (symPtr) {
         var zCPar_Symbol sym; sym = _^(symPtr);
         sym.content = val;
@@ -378,7 +381,7 @@ func string setI(var string name, var int val) {
     return "Invalid symbol";
 };
 func string setF(var string name, var float val) {
-    var int symPtr; symPtr = verifySymbol(name, zPAR_TYPE_FLOAT);
+    var int symPtr; symPtr = Patch_verifySymbol(name, zPAR_TYPE_FLOAT);
     if (symPtr) {
         var zCPar_Symbol sym; sym = _^(symPtr);
         sym.content = castToIntf(val);
@@ -387,7 +390,7 @@ func string setF(var string name, var float val) {
     return "Invalid symbol";
 };
 func string setIF(var string name, var float val) {
-    var int symPtr; symPtr = verifySymbol(name, zPAR_TYPE_INT);
+    var int symPtr; symPtr = Patch_verifySymbol(name, zPAR_TYPE_INT);
     if (symPtr) {
         var zCPar_Symbol sym; sym = _^(symPtr);
         sym.content = castToIntf(val);
@@ -396,7 +399,7 @@ func string setIF(var string name, var float val) {
     return "Invalid symbol";
 };
 func string setFI(var string name, var int val) {
-    var int symPtr; symPtr = verifySymbol(name, zPAR_TYPE_FLOAT);
+    var int symPtr; symPtr = Patch_verifySymbol(name, zPAR_TYPE_FLOAT);
     if (symPtr) {
         var zCPar_Symbol sym; sym = _^(symPtr);
         sym.content = val;
