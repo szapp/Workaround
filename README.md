@@ -54,7 +54,7 @@ Along-side a few helper functions.
 ## Further information
 
 - Info: https://forum.worldofplayers.de/forum/threads/1546912
-- Instructions: https://forum.worldofplayers.de/forum/thread/?p=25621202
+- Instructions: https://forum.worldofplayers.de/forum/threads/?p=25621202
 
 ## Installation
 
