@@ -1,1 +1,1 @@
-const int PATCH_WH_EXE = 3;
+const int PATCH_WORKAROUND_EXE = 3;

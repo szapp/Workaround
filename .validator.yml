@@ -1,7 +1,7 @@
 # This file is required for the patch-validator to work and may contain advanced configuration options
 # For more information, visit https://github.com/szapp/patch-validator/#configuration
 
-prefix: WH
+prefix:
 ignore-declaration:
   # These function names need to be concise for usage from the console
   - getS

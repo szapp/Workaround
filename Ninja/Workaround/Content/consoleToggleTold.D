@@ -2,23 +2,23 @@
  * Toggle the "told" state of dialogs from the console
  * Written by mud-freak, 2018
  *
- * If using elsewhere, please be sure to remove the prefix "Patch_WH_" from all symbols! Please mention the original
- * source listed above.
+ * If using elsewhere, please be sure to remove the prefix "Patch_Workaround_" from all symbols! Please mention the
+ * original source listed above.
  */
 
 
 /*
  * Initialization function
  */
-func void Patch_WH_CC_ToggleToldInit() {
-    CC_Register(Patch_WH_CC_ToggleTold, "dia toggle ", "Toggle told status of C_Info dialogs");
+func void Patch_Workaround_CC_ToggleToldInit() {
+    CC_Register(Patch_Workaround_CC_ToggleTold, "dia toggle ", "Toggle told status of C_Info dialogs");
 };
 
 
 /*
  * Function to toggle told status of infos
  */
-func string Patch_WH_CC_ToggleTold(var string infoName) {
+func string Patch_Workaround_CC_ToggleTold(var string infoName) {
     // Find instance symbol by instance name
     var int symbID; symbID = MEM_GetSymbolIndex(infoName);
 
@@ -32,7 +32,7 @@ func string Patch_WH_CC_ToggleTold(var string infoName) {
     if (CALL_Begin(call)) {
         CALL_IntParam(_@(symbID));
         CALL_PutRetValTo(_@(infoPtr));
-        CALL__thiscall(_@(infoMan), oCInfoManager__GetInformation[PATCH_WH_EXE]);
+        CALL__thiscall(_@(infoMan), oCInfoManager__GetInformation[PATCH_WORKAROUND_EXE]);
         call = CALL_End();
     };
     var int infoPtr;
