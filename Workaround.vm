@@ -1,23 +1,54 @@
 [BEGINVDF]
-Comment=Workaround patch for Gothic, Gothic Sequel, Gothic 2, and Gothic 2 NotR%%NThis patch provides various workarounds for story bugs in mods. See readme.
+Comment=Toolkit to serve workarounds for story bugs in Gothic, Gothic Sequel, Gothic 2, and Gothic 2 NotR%%NSee readme for available methods
 BaseDir=.\
 VDFName=.\Workaround.vdf
 
 [FILES]
-README_Workaround.txt
+; Modular resources
+_work\Data\Anims\*.MDS
+_work\Data\Anims\MDS_Mobsi\*.MDS
+_work\Data\Anims\MDS_Overlay\*.MDS
+_work\Data\Anims\_compiled\*.MAN
+_work\Data\Anims\_compiled\*.MDH
+_work\Data\Anims\_compiled\*.MDL
+_work\Data\Anims\_compiled\*.MDM
+_work\Data\Anims\_compiled\*.MMB
+_work\Data\Anims\_compiled\*.MSB
+_work\Data\Meshes\_compiled\*.MRM
+_work\Data\Meshes\_compiled\*.MSH
+_work\Data\Presets\*.ZEN
+_work\Data\Sound\SFX\*.WAV
+_work\Data\Sound\Speech\*.WAV
+_work\Data\Textures\_compiled\*-C.TEX
+_work\Data\Textures\_compiled\*.FNT
+_work\Data\Worlds\*.ZEN
 
-; Resources (list the specific files from _work here)
-; _work\* -r
-
-; Script files
+; Ninja resources
 Ninja\Workaround\* -r
 
+; License and README
+LICENSE
+README.md
+
 [EXCLUDE]
+; Exclude sub-directories
+*\Ninja\* -r
+*\_work\* -r
+
+; Exclude source scripts
 _work\Data\Scripts\* -r
+
+; Exclude metadata
+.empty -r
 *.vm
 *.vdf
 *.bat
+*.cfg
+.*
 
 [INCLUDE]
+; License and README
+LICENSE
+README.md
 
 [ENDVDF]

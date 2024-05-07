@@ -1,7 +1,8 @@
 Ikarus
 LeGo
 
+Content\exe_G112.d
 Content\consoleCallFunc.d
 Content\consoleToggleTold.d
 
-Content\NinjaInit.d
+Content\init.d
