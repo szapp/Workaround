@@ -5,6 +5,6 @@ func void Ninja_Workaround_Init() {
     // Wrapper for "LeGo_Init" to ensure correct LeGo initialization without breaking the mod
     LeGo_MergeFlags(LeGo_ConsoleCommands);
 
-    Patch_WH_CC_CallInit();
-    Patch_WH_CC_ToggleToldInit();
+    Patch_Workaround_CC_CallInit();
+    Patch_Workaround_CC_ToggleToldInit();
 };
